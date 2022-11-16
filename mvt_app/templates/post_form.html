@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block content %}
+<article>
+    <h1>Guardar {{ name }}</h1>
+
+    {% if form.errors %}
+    <p style="color:red">El formulario tiene errores</p>
+    {% endif %}
+
+    <form style="font-weight: bold" action="{{ action }}" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Submit">
+    </form>
+</article>
+{% endblock %}

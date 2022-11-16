@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block content %}
+<article>
+    <h1>Buscar {{ name }}</h1>
+
+    {% if form.errors %}
+    <p style="color:red">El formulario tiene errores</p>
+    {% endif %}
+
+    <form style="font-weight: bold" action="{{ action }}" method="get">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if object_list %}
+    <h2>Resultados</h2>
+    <ul>
+        {% for object in object_list %}
+        <li>{{ object }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</article>
+{% endblock %}

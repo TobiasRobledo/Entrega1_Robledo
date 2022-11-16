@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #content {
+            margin: 0 5%;
+            width: 90%;
+        }
+
+        header {
+            padding: 0 5%;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <a href="/">Home</a> -
+                <a href="/save-product/">Guardar producto</a> -
+                <a href="/search-products/">Buscar productos</a> -
+                <a href="/save-category/">Guardar categoría</a> -
+                <a href="/search-categories/">Buscar categorías</a> -
+                <a href="/save-order/">Guardar órden</a> -
+                <a href="/search-orders/">Buscar órdenes</a>
+            </nav>
+        </header>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+
+</html>
